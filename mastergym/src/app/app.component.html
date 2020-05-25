@@ -4,7 +4,9 @@
 </div>
 
 <ng-template #showLogin>
-  <div *ngIf="loading" class="text-center"></div> 
+  <div *ngIf="loading">
+    <img class="lds-logo" src="assets/mastergym_logo.jpeg">
+  </div> 
   <app-login *ngIf="!loading"></app-login>
 </ng-template>
 

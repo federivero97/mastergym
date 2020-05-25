@@ -18,7 +18,7 @@ export class AppComponent {
       setTimeout(() => {
         this.loading = false;
         this.user = user;
-      }, 2000);
+      }, 3000);
     }))
   }
   login() {
