@@ -1,4 +1,7 @@
 <div *ngIf="user && !loading; else showLogin">
+  <app-nav-bar></app-nav-bar>
+  <router-outlet></router-outlet>
+
   <h1>Hello {{ user.email }}!</h1>
   <button (click)="logout()">Logout</button>
 </div>
@@ -10,4 +13,3 @@
   <app-login *ngIf="!loading"></app-login>
 </ng-template>
 
-<router-outlet></router-outlet>
