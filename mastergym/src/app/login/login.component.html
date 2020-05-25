@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="text-center">
+        <h3> Wellcome to</h3>
+        <img src="assets/mastergym_logo.jpeg">
+    </div>
+    
+    <form [formGroup]="formLogin">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        
+            <div *ngIf="formLogin.controls['email'].invalid && formLogin.controls['email'].dirty" class="alert alert-warning" role="alert">
+                <span *ngIf="formLogin.controls['email'].errors.required"> The email is required. </span>
+                <span *ngIf="formLogin.controls['email'].invalid"> Invalid email</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" (keyUp.enter)="login()" class="form-control" id="password" formControlName="password" placeholder="Password">
+            
+            <div *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].dirty" class="alert alert-warning" role="alert">
+                <span *ngIf="formLogin.controls['password'].errors.required"> The password is required. </span>
+            </div>
+        </div>
+
+        <div *ngIf="!validForm" class="alert alert-danger" role="alert">
+           {{errorMessage}}
+        </div>
+
+        <button type="submit" (click)="login()" [disabled]="!formLogin.valid" class="btn btn-primary">Log In</button>
+    </form>
+
+    
+</div>

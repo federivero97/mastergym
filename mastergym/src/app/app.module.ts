@@ -4,15 +4,26 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    AngularFireAuth,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
