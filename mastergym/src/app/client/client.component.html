@@ -1,0 +1,76 @@
+<div class="container mt-5">
+    <h3 *ngIf="!editeable" > Add a new client </h3>
+    <h3 *ngIf="editeable" > Edit client </h3>
+    <form [formGroup]=formClient action="">
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> Name </label>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Insert name">
+                    <div *ngIf="formClient.controls['name'].invalid && formClient.controls['name'].dirty" class="alert alert-warning" role="alert">
+                        <span *ngIf="formClient.controls['name'].errors.required"> The name is required. </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> Last Name </label>
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Insert last name">
+                    <div *ngIf="formClient.controls['lastName'].invalid && formClient.controls['lastName'].dirty" class="alert alert-warning" role="alert">
+                        <span *ngIf="formClient.controls['lastName'].errors.required"> The lastName is required. </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> Birthdate </label>
+                    <input type="date" class="form-control" formControlName="birthdate" placeholder="Insert birthdate">
+                    <div *ngIf="formClient.controls['birthdate'].invalid && formClient.controls['birthdate'].dirty" class="alert alert-warning" role="alert">
+                        <span *ngIf="formClient.controls['birthdate'].errors.required"> The birthdate is required. </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for=""> Email </label>
+                    <input type="text" class="form-control" formControlName="email" placeholder="Insert email">
+                    <div *ngIf="formClient.controls['email'].invalid && formClient.controls['email'].dirty" class="alert alert-warning" role="alert">
+                        <span *ngIf="formClient.controls['email'].errors.required"> The email is required. </span>
+                        <span *ngIf="formClient.controls['email'].invalid"> Invalid email</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> Phone Number </label>
+                    <input type="number" class="form-control"formControlName="phone" placeholder="Insert phone number">
+                    <div *ngIf="formClient.controls['phone'].invalid && formClient.controls['phone'].dirty" class="alert alert-warning" role="alert">
+                        <span *ngIf="formClient.controls['phone'].errors.required"> The phone number is required. </span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for=""> Image </label>
+                    <input type="file" class="form-control-file" (change)="uploadClientImg($event)" formControlName="imgURL" placeholder="Insert image">
+                </div>
+            </div>
+        </div>
+
+        <button *ngIf="!editeable" class="btn btn-primary" (click)="addClient()" [disabled]="formClient.invalid"> Add </button>
+        <button *ngIf="editeable" class="btn btn-primary" (click)="editClient()" [disabled]="formClient.invalid"> Edit </button>
+    </form>
+</div>   
