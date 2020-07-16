@@ -33,6 +33,7 @@ export class PlansComponent implements OnInit {
     this.seePlans()
   }
 
+  // Create a new Plan
   addPlan() {
     this.db.collection<Plan>('plans').add(this.formPlan.value).then(()=>{
       this.msg.messageSuccess('Good Job','The plan has been added successfully')
@@ -43,6 +44,7 @@ export class PlansComponent implements OnInit {
     })
   }
 
+  // Get plan information to edit it
   selectPlan(plan: Plan) {
     this.editeable = true
     this.formPlan.setValue({
@@ -54,6 +56,7 @@ export class PlansComponent implements OnInit {
     this.id = plan.id
   }
 
+  // Edir a plan
   editPlan() {
     this.db.doc('plans/' + this.id).update(this.formPlan.value).then(()=>{
       this.msg.messageSuccess('Good Job','The plan has been edited successfully')
@@ -65,6 +68,7 @@ export class PlansComponent implements OnInit {
     }) 
   }
   
+  // Get plans from the database
   seePlans(){
     this.db.collection<Plan>('plans').get().subscribe((items)=>{
       this.plans.length = 0

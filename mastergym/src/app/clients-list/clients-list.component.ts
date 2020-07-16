@@ -13,6 +13,7 @@ export class ClientsListComponent implements OnInit {
   constructor(private db: AngularFirestore) {}
 
   ngOnInit(): void {
+    // Get clients from database
     this.db.collection('clients').get().subscribe((items)=>{
       this.clients.length = 0
       items.docs.forEach((item)=>{
@@ -26,6 +27,7 @@ export class ClientsListComponent implements OnInit {
     })
   }
 
+  // Show specific clients 
   searchClient(text: string){
     this.clients.forEach((client)=>{
       if(client.name.toLowerCase().includes(text.toLowerCase())){

@@ -13,6 +13,7 @@ export class EnrollmentsListComponent implements OnInit {
   constructor(private db:AngularFirestore) { }
 
   ngOnInit(): void {
+    // Get enrollments from database
     this.db.collection('enrollments').get().subscribe((items)=>{
       items.forEach((item) =>{
 

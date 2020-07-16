@@ -28,7 +28,6 @@ export class ClientFormComponent implements OnInit {
 
   ngOnInit(): void {
 
-
     this.formClient = this.fb.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -42,6 +41,7 @@ export class ClientFormComponent implements OnInit {
 
     this.id = this.activeRoute.snapshot.params.clientId
 
+    // Get client information to edit it
     if (this.id != undefined){
       this.db.doc<any>('clients/' + this.id).valueChanges().subscribe((client)=>{
         this.formClient.setValue({
@@ -56,8 +56,10 @@ export class ClientFormComponent implements OnInit {
       });
       this.editeable = true;
     }
+
   };
 
+  // Add a client already to the database
   addClient(){
 
     this.formClient.value.birthdate = new Date(this.formClient.value.birthdate)
@@ -71,6 +73,7 @@ export class ClientFormComponent implements OnInit {
     })
   }
   
+  // Edit a client already in the database
   editClient(){
 
     this.formClient.value.birthdate = new Date(this.formClient.value.birthdate)
@@ -85,6 +88,7 @@ export class ClientFormComponent implements OnInit {
     })
   }
 
+  // Updload client image to firebase database
   uploadClientImg(event){
 
     if(event.target.files.length > 0){

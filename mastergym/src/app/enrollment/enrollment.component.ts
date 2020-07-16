@@ -22,6 +22,7 @@ export class EnrollmentComponent implements OnInit {
   constructor(private db:AngularFirestore, private msg:MessagesService) { }
 
   ngOnInit(): void {
+    // Get plans from database
     this.db.collection('plans').get().subscribe((items)=>{
       this.plans.length = 0
       items.docs.forEach((item)=>{
@@ -33,16 +34,19 @@ export class EnrollmentComponent implements OnInit {
     });
   }
 
+  // Define enrollment client
   defineClient(client: Client){
     this.enrollment.client = client.ref
     this.clientSelected = client
   }
 
+  // Remove enrollment client
   removeClient(){
     this.enrollment.client = undefined
     this.clientSelected = new Client()
   }
 
+  // Calculate and add plan info to enrollment
   selectPlan(){
 
     if (this.idPlan != "null"){
@@ -81,6 +85,7 @@ export class EnrollmentComponent implements OnInit {
     }
   }
 
+  // Save enrollment to database
   save(){
     if (this.enrollment.validate().valid){
 
