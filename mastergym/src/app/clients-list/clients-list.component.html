@@ -12,7 +12,6 @@
             <div class="card" style="width: 15rem;">
               <img [src]="client.imgURL" class="card-img-top img-client">
               <div class="card-body">
-                <p>{{client.id}}</p>
                 <h5 class="card-title"> {{client.name}} {{client.lastName}} </h5>
                 <a [routerLink]="['/client-edit/', client.id]" class="card-link"> Edit </a>
                 <a href="#" class="card-link text-danger">Unsuscribe</a>

@@ -22,6 +22,7 @@ import { MessagesService } from './services/messages.service';
 import { PlansComponent } from './plans/plans.component';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { SelectClientComponent } from './select-client/select-client.component';
+import { EnrollmentsListComponent } from './enrollments-list/enrollments-list.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SelectClientComponent } from './select-client/select-client.component';
     PlansComponent,
     EnrollmentComponent,
     SelectClientComponent,
+    EnrollmentsListComponent,
   ],
   imports: [
     BrowserModule,

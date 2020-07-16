@@ -4,6 +4,7 @@ import { ClientsListComponent } from './clients-list/clients-list.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { PlansComponent } from './plans/plans.component';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
+import { EnrollmentsListComponent } from './enrollments-list/enrollments-list.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: 'enrollment', component: EnrollmentComponent
+  },
+  {
+    path: 'enrollments-list', component: EnrollmentsListComponent
   },
   {
     path: 'clients-list', component: ClientsListComponent
