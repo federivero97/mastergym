@@ -1,0 +1,21 @@
+<div class="container mt-3"> 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"> Client </th>
+            <th scope="col"> Plan </th>
+            <th scope="col"> Initial Date </th>
+            <th scope="col"> End Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let enrollment of enrollments">
+            <th scope="row">{{enrollment.client.name}} {{enrollment.client.lastName}}</th>
+            <td>{{enrollment.plan.name}}</td>
+            <td>{{enrollment.initialDate | date}}</td>
+            <td>{{enrollment.endDate | date}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

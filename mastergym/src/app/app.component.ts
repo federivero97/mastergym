@@ -14,17 +14,10 @@ export class AppComponent {
   loading : boolean = true;
 
   constructor(private afAuth: AngularFireAuth) {
-    this.afAuth.user.subscribe((user => {
-      setTimeout(() => {
-        this.loading = false;
-        this.user = user;
-      }, 3000);
-    }))
+    this.afAuth.user.subscribe((user) => {
+      this.loading = false;
+      this.user = user;
+    })
   }
-  login() {
-    this.afAuth.auth.signInWithEmailAndPassword('federicorivero@gmail.com','123456789');
-  }
-  logout() {
-    this.afAuth.auth.signOut();
-  }
+
 }
