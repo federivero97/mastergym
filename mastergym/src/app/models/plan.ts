@@ -6,4 +6,5 @@ export class Plan{
     name: string;
     cost: number;
     duration: number;
+    durationType: string;
 }

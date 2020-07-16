@@ -27,7 +27,8 @@ export class PlansComponent implements OnInit {
     this.formPlan = this.fb.group({
       name: ['', Validators.required],
       cost: ['', Validators.required],
-      duration: ['', Validators.required]
+      duration: ['', Validators.required],
+      durationType: ['', Validators.required]
     })
     this.seePlans()
   }
@@ -48,6 +49,7 @@ export class PlansComponent implements OnInit {
       name: plan.name,
       cost: plan.cost,
       duration: plan.duration,
+      durationType: plan.durationType
     })
     this.id = plan.id
   }

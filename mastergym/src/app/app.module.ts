@@ -17,9 +17,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ClientsListComponent } from './clients-list/clients-list.component';
-import { ClientComponent } from './client/client.component';
+import { ClientFormComponent } from './client-form/client-form.component';
 import { MessagesService } from './services/messages.service';
 import { PlansComponent } from './plans/plans.component';
+import { EnrollmentComponent } from './enrollment/enrollment.component';
+import { SelectClientComponent } from './select-client/select-client.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,10 @@ import { PlansComponent } from './plans/plans.component';
     LoginComponent,
     NavBarComponent,
     ClientsListComponent,
-    ClientComponent,
+    ClientFormComponent,
     PlansComponent,
+    EnrollmentComponent,
+    SelectClientComponent,
   ],
   imports: [
     BrowserModule,

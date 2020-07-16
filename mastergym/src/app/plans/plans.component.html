@@ -20,12 +20,15 @@
                 </div>
                 <div class="formGroup mt-3">
                     <label for=""> Duration </label>
-                    <select class="form-control" formControlName="duration">
-                        <option value="1"> Day </option>
-                        <option value="2"> Week </option>
-                        <option value="3"> 2 Week </option>
-                        <option value="4"> Month </option>
-                        <option value="5"> Year </option>
+                    <input class="form-control" formControlName="duration" type="number">
+                </div>
+                <div class="formGroup mt-3">
+                    <label for=""> Duration Type </label>
+                    <select class="form-control" formControlName="durationType">
+                        <option value="day"> Day </option>
+                        <option value="week"> Week </option>
+                        <option value="month"> Month </option>
+                        <option value="year"> Year </option>
                     </select>
                 </div>
     

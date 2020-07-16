@@ -2,21 +2,23 @@
     <h4> Clients List </h4>
     <form action="">
         <div class="form-group">
-          <input type="text" class="form-control"  placeholder="Search Client">
+          <input type="text" (input)="searchClient($event.target.value)" class="form-control"  placeholder="Search Client">
         </div>
       </form>
 
     <div class="row">
         <div class="col-sm-3" *ngFor="let client of clients">
+          <div *ngIf="client.visible">
             <div class="card" style="width: 15rem;">
-                <img [src]="client.imgURL" class="card-img-top img-client">
-                <div class="card-body">
-                  <p>{{client.id}}</p>
-                  <h5 class="card-title"> {{client.name}} {{client.lastName}} </h5>
-                  <a [routerLink]="['/client-edit/', client.id]" class="card-link"> Edit </a>
-                  <a href="#" class="card-link text-danger">Unsuscribe</a>
-                </div>
+              <img [src]="client.imgURL" class="card-img-top img-client">
+              <div class="card-body">
+                <p>{{client.id}}</p>
+                <h5 class="card-title"> {{client.name}} {{client.lastName}} </h5>
+                <a [routerLink]="['/client-edit/', client.id]" class="card-link"> Edit </a>
+                <a href="#" class="card-link text-danger">Unsuscribe</a>
               </div>
+            </div>
+          </div>
         </div>
     </div>
 </div>

@@ -8,10 +8,10 @@ import { MessagesService } from '../services/messages.service';
 
 @Component({
   selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss']
+  templateUrl: './client-form.component.html',
+  styleUrls: ['./client-form.component.scss']
 })
-export class ClientComponent implements OnInit {
+export class ClientFormComponent implements OnInit {
   
   formClient: FormGroup;
   imgURL = 'https://firebasestorage.googleapis.com/v0/b/mastergym-a3bfc.appspot.com/o/clients%2Fundefined.png?alt=media&token=e50d3e87-2377-4e3c-a396-5f2e8c0279b9';

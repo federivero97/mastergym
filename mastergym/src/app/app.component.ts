@@ -19,5 +19,5 @@ export class AppComponent {
       this.user = user;
     })
   }
-  
+
 }
